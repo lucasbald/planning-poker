@@ -12,6 +12,10 @@ const port = process.env.PORT || 3000;
   const server = http.Server(app);
 
   const allowedOrigins = process.env.NODE_ENV === 'production' ? [
+    'https://the-scrum-poker.online',
+    'https://www.the-scrum-poker.online',
+    'https://online-scrum-poker.com',
+    'https://www.online-scrum-poker.com',
     'https://planning-poker-bald.vercel.app',
   ] : '*';
 
