@@ -11,13 +11,14 @@ const port = process.env.PORT || 3000;
   const app = express();
   const server = http.Server(app);
 
-  const allowedOrigins = process.env.NODE_ENV === 'production' ? [
-    'https://the-scrum-poker.online',
-    'https://www.the-scrum-poker.online',
-    'https://online-scrum-poker.com',
-    'https://www.online-scrum-poker.com',
-    'https://planning-poker-bald.vercel.app',
-  ] : '*';
+  // const allowedOrigins = process.env.NODE_ENV === 'production' ? [
+  //   'https://the-scrum-poker.online',
+  //   'https://www.the-scrum-poker.online',
+  //   'https://online-scrum-poker.com',
+  //   'https://www.online-scrum-poker.com'
+  // ] : '*';
+
+  const allowedOrigins = '*';
 
   const io = socketIo(server, { cors: { origin: allowedOrigins } });
   io.on('connection', (socket) => {
